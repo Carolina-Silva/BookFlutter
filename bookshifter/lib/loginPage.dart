@@ -6,7 +6,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Hello, World!'),
+        title: Text('Entrar'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -21,11 +21,32 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
-            ElevatedButton(
+              Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: TextField(
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: 'E-mail',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+                     Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: TextField(
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: 'Senha',
+                  border: OutlineInputBorder(),
+                ),
+                 obscureText: true,
+              ),
+            ),
+             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text('Voltar para Home'),
+              child: Text('Login'),
             ),
           ],
         ),

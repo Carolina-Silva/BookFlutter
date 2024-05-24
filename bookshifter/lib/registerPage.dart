@@ -6,7 +6,7 @@ class RegisterPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Hello, World!'),
+        title: Text('Cadastrar'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -19,6 +19,37 @@ class RegisterPage extends StatelessWidget {
                   'Registro',
                   style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
                 ),
+              ),
+            ),
+             Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: TextField(
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: 'Nome',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+             Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: TextField(
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: 'E-mail',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+             Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: TextField(
+                keyboardType: TextInputType.visiblePassword,
+                decoration: InputDecoration(
+                  labelText: 'Senha',
+                  border: OutlineInputBorder(), 
+                ),
+                obscureText: true,
               ),
             ),
             ElevatedButton(
