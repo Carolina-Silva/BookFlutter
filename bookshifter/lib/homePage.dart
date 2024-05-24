@@ -1,10 +1,47 @@
 import 'package:flutter/material.dart';
 import 'bookPage.dart';
+import 'loginPage.dart';
+import 'registerPage.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Bookshifter'),
+        actions: [
+          TextButton(
+             onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
+                },
+            child: Text(
+              'Login',
+              style: TextStyle(color: Colors.white),
+            ),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Colors.orange), 
+            ),
+          ),
+          TextButton(
+             onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RegisterPage()),
+                  );
+                },
+            child: Text(
+              'Cadastro',
+              style: TextStyle(color: Colors.white),
+            ),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Colors.orange),
+            ),
+          ),
+        ],
+      ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
@@ -33,7 +70,7 @@ class HomePage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-              Padding(
+            Padding(
               padding: const EdgeInsets.all(20.0),
               child: ElevatedButton(
                 onPressed: () {
@@ -55,7 +92,6 @@ class HomePage extends StatelessWidget {
               fit: BoxFit.cover,
             ),
             SizedBox(height: 30),
-          
             SizedBox(height: 20),
           ],
         ),
