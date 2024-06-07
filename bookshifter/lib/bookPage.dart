@@ -1,29 +1,35 @@
+import 'dart:io';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:bookshifter/OpenlibraryRequest.dart';
+import 'package:http/http.dart' as http;
 
-class BookPage extends StatelessWidget {
+class BookPage extends StatefulWidget {
+  const BookPage({Key? key}) : super(key: key);
+
+  @override
+  _BookPageState createState() => _BookPageState();
+}
+
+class _BookPageState extends State<BookPage> {
+  TextEditingController isbnTextEditingController = TextEditingController();
+  String _imageURL = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(''),
+        title: Text('Doar um livro'),
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  'Doar um livro',
-                  style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: TextField(
+                controller: isbnTextEditingController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: 'ISBN',
@@ -31,12 +37,16 @@ class BookPage extends StatelessWidget {
                 ),
               ),
             ),
-             ElevatedButton(
+            ElevatedButton(
               onPressed: () {
-                Navigator.pop(context);
+                setState(() {
+                  var isbn = isbnTextEditingController.text;
+                  _imageURL = "https://covers.openlibrary.org/b/isbn/$isbn-M.jpg";
+                });
               },
-              child: Text('Voltar para Home'),
+              child: Text("Enviar"),
             ),
+            if (_imageURL.isNotEmpty) Image.network(_imageURL),
           ],
         ),
       ),
