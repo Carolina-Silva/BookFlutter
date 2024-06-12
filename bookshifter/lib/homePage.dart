@@ -91,7 +91,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Image.asset(
-              'assets/img1.png',
+              'img1.png',
               height: 200,
               fit: BoxFit.cover,
             ),

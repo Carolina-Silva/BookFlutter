@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "17791082107",
+    "project_id": "bookshifter-5cd45",
+    "storage_bucket": "bookshifter-5cd45.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17791082107:android:acabe5df21530f641d8cde",
+        "android_client_info": {
+          "package_name": "com.example.bookshifter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUY5BO0AxdKrGyYI1EJQskXrCdnn8d2BU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
